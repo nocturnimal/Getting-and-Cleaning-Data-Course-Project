@@ -15,10 +15,10 @@ unzipped to the working direcctory:
 
 To run the script:
 
-'''
+```
 source("run_analysis.R")
 run_analysis()
-'''
+```
 
 Comments in the script describe how each question is answered.
 Comments also indicate where descriptive names for rows and 
@@ -29,9 +29,9 @@ it is processed in order to answer the project questions.
 For this project the dataframe for question 5 is uplaoded. 
 It is named tidyData and exported for upload as follows:
 
-'''
+```
 write.table(tidyData, file="tidyData.txt", row.name=FALSE)
-'''
+```
 
 The resulting data is "Tidy" because it meets the requirements of
 a tidy data frame:
