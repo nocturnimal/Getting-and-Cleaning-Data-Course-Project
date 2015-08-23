@@ -3,7 +3,7 @@
 This codebook describes operations performed on the data to answer the
 5 questions for this assignment.
 
-This codebook complements the codebook in the included data set which details
+This complements the codebook in the included data set which details
 how the data was collected, the data files for training and test data,
 and information on column names and definitions for subject activites.
 
