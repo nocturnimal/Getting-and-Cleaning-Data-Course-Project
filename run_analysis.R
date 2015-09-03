@@ -27,7 +27,6 @@ run_analysis <- function() {
     # The merged data has 10299 observations, the sum of 2947 observations in
     # the test data and 7352 observations in the training data. 2947 + 7352 = 10299.
 
-    
     # 2. Extracts only the measurements on the mean and standard deviation for 
     #    each measurement. 
     # Using the column names provided by the "features.txt" file in the data,
@@ -35,11 +34,10 @@ run_analysis <- function() {
     featureList <- read.table("./UCI HAR Dataset/features.txt")
     meanList <- grep("mean", featureList$V2)
     stdList <- grep("std", featureList$V2)
-    meanAndStdList <- append(meanlist, stdList)
+    meanAndStdList <- append(meanList, stdList)
     meanAndStandardDeviationData <- mergedData[,meanAndStdList]
     # This completes the requirement for extracting only the mean and standard
     # deviation for each measurement.
-    
 
     # 3. Uses descriptive activity names to name the activities in the data set 
     # The activity names are defined in the file "activity_labels.txt". Each
@@ -53,7 +51,6 @@ run_analysis <- function() {
     # This completes the requirement by replacing the activity number with
     # a descriptive name from the activity_labels.txt file.
     
-    
     # 4. Appropriately labels the data set with descriptive variable names. 
     # We previously loaded in the descriptive column names for question 2.
     columnNames <- as.character(featureList[,2])
@@ -65,7 +62,7 @@ run_analysis <- function() {
     colnames(mergedData) <- columnNames
     # This completes the requirement by replacing the numbered column names 
     # with descriptive names taken from the features.txt file
-    
+
     # 5. From the data set in step 4, creates a second, independent tidy data set 
     #    with the average of each variable for each activity and each subject.
     library(reshape2)
@@ -76,4 +73,7 @@ run_analysis <- function() {
     # is a row containing the mean of all other variables. The data is "tidy"
     # because each column contains a single measurement and each row contains
     # those measurements for unique activity and subject combinations.
+
+    # To generate the file for upload, uncomment the following line:
+    # write.table(tidyData, "tidyData.txt", row.name=FALSE)    
 }
